@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('role_id')->constrained('roles')->onDelete('cascade');
             $table->bigInteger('google_id')->nullable()->unique();
             $table->string('name', 80);
             $table->string('email', 100)->unique();
@@ -20,11 +21,8 @@ return new class extends Migration
             $table->string('password', 255);
             $table->string('phone', 18)->nullable()->unique();
             $table->tinyInteger('active');
-            $table->string('company_name')->nullable()->unique();
-            $table->string('rfc', 13)->nullable()->unique();
             $table->rememberToken();
             $table->timestamps();
-
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

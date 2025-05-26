@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('id')->primary();
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->timestamps();
             $table->json('data')->nullable();
+            $table->timestamps();
         });
     }
 
