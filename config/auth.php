@@ -36,7 +36,7 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'global' => [
             'driver' => 'session',
             'provider' => 'global_users',
         ],

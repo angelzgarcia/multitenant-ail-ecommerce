@@ -10,7 +10,7 @@ class User extends Authenticatable
 {
     use BelongsToTenant, HasRoles;
 
-    protected $guard_name = 'web';
+    protected $guard_name = 'global';
 
     protected $fillable = [
         'name',
